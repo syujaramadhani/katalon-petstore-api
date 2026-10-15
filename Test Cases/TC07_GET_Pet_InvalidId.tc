@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC07_GET_Pet_InvalidId</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>1e9f5f90-2798-41f9-a8de-b8f5981bd83d</testCaseGuid>
+</TestCaseEntity>

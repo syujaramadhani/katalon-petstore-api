@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebServiceRequestEntity>
+   <description></description>
+   <name>POST_Pet</name>
+   <tag></tag>
+   <elementGuidId>8e7ddf96-ab7c-4085-8df3-63cc967610c8</elementGuidId>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <autoUpdateContent>false</autoUpdateContent>
+   <connectionTimeout>-1</connectionTimeout>
+   <followRedirects>false</followRedirects>
+   <httpBody></httpBody>
+   <httpBodyContent>{
+  &quot;text&quot;: &quot;${body}&quot;,
+  &quot;contentType&quot;: &quot;application/json&quot;,
+  &quot;charset&quot;: &quot;UTF-8&quot;
+}</httpBodyContent>
+   <httpBodyType>text</httpBodyType>
+   <httpHeaderProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>Content-Type</name>
+      <type>Main</type>
+      <value>application/json</value>
+      <webElementGuid>dcf3a734-f580-4237-b985-593637720847</webElementGuid>
+   </httpHeaderProperties>
+   <katalonVersion>11.4.0</katalonVersion>
+   <maxResponseSize>-1</maxResponseSize>
+   <migratedVersion>5.4.1</migratedVersion>
+   <path>/pet</path>
+   <restRequestMethod>POST</restRequestMethod>
+   <restUrl>${GlobalVariable.baseUrl}/pet</restUrl>
+   <serviceType>RESTful</serviceType>
+   <soapBody></soapBody>
+   <soapHeader></soapHeader>
+   <soapRequestMethod></soapRequestMethod>
+   <soapServiceEndpoint></soapServiceEndpoint>
+   <socketTimeout>-1</socketTimeout>
+   <useServiceInfoFromWsdl>true</useServiceInfoFromWsdl>
+   <variables>
+      <defaultValue>GlobalVariable.invalidBody</defaultValue>
+      <description></description>
+      <id>059871ef-6b5a-4919-955a-8042618aa354</id>
+      <masked>false</masked>
+      <name>body</name>
+   </variables>
+   <verificationScript></verificationScript>
+   <wsdlAddress></wsdlAddress>
+</WebServiceRequestEntity>

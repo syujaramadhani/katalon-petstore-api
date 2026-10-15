@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC10_E2E_Pet_Lifecycle</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>c2aa9ae2-40b8-406f-bd14-fdaf5cdb1081</testCaseGuid>
+</TestCaseEntity>

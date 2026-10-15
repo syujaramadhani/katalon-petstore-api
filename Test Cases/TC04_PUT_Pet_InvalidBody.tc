@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC04_PUT_Pet_InvalidBody</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>aac8ce4f-0709-4cdc-81b6-7f71d6c9a093</testCaseGuid>
+</TestCaseEntity>

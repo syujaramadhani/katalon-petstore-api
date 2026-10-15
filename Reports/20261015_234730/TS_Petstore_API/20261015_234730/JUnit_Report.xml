@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="TS_Petstore_API" time="10.218" tests="10" passed="10" failures="0" errors="0" incompleted="0" skipped="0">
+   <testsuite name="TS_Petstore_API" tests="10" passed="10" failures="0" errors="0" incompleted="0" skipped="0" time="10.218" timestamp="2026-10-15T16:47:35.380Z" hostname="syuja - localhost" id="Test Suites/TS_Petstore_API" status="PASSED">
+      <properties>
+         <property name="deviceName" value=""/>
+         <property name="devicePlatform"/>
+         <property name="logFolder" value="/Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730"/>
+         <property name="logFiles" value="/Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/execution0.log, /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/console0.log"/>
+         <property name="attachments" value=""/>
+         <property name="executionBindingVariables" value="[]"/>
+         <property name="hostName" value="syuja - localhost"/>
+         <property name="os" value="Mac OS X 64bit"/>
+         <property name="katalonVersion" value="11.4.0"/>
+         <property name="userFullName" value="syuja ramadhani"/>
+         <property name="hostAddress" value="127.0.0.1"/>
+         <property name="projectName" value="api-petstore-automation"/>
+      </properties>
+      <testcase name="Test Cases/TC01_POST_Pet_Valid" time="2.714" classname="Test Cases/TC01_POST_Pet_Valid" status="PASSED">
+         <system-out><![CDATA[15-10-2026T23:47:35 - [TEST_CASE][PASSED] - Test Cases/TC01_POST_Pet_Valid: Test Cases/TC01_POST_Pet_Valid
+
+15-10-2026T23:47:35 - [TEST_STEP][PASSED] - PetHelper.generateNewPet(): null
+
+15-10-2026T23:47:35 - [TEST_STEP][PASSED] - body = PetHelper.buildPetBody(petId, petName, petStatusAvailable): null
+
+15-10-2026T23:47:35 - [TEST_STEP][PASSED] - response = sendRequest(findTestObject("API/POST_Pet", ["body":body])): Send request successfully
+
+15-10-2026T23:47:37 - [MESSAGE][INFO] - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/POST_Pet_0.har
+
+15-10-2026T23:47:37 - [MESSAGE][INFO] - cURL Command:
+curl \
+  --location \
+  --request POST \
+  --data '{"id":1792082855840078,"category":{"id":1,"name":"dog"},"name":"pet_1792082855840078","photoUrls":["https://example.com/pet.jpg"],"tags":[{"id":1,"name":"auto"}],"status":"available"}' \
+  --header 'Content-Type: application/json' \
+  'https://petstore.swagger.io/v2/pet'
+
+15-10-2026T23:47:37 - [MESSAGE][PASSED] - Send request successfully
+
+15-10-2026T23:47:37 - [TEST_STEP][PASSED] - verifyResponseStatusCode(response, 200): Verify response status code successfully
+
+15-10-2026T23:47:37 - [MESSAGE][PASSED] - Verify response status code successfully
+
+15-10-2026T23:47:37 - [TEST_STEP][PASSED] - verifyElementPropertyValue(response, "id", petId): Verify element property value successfully
+
+15-10-2026T23:47:37 - [MESSAGE][PASSED] - Verify element property value successfully
+
+15-10-2026T23:47:37 - [TEST_STEP][PASSED] - verifyElementPropertyValue(response, "name", petName): Verify element property value successfully
+
+15-10-2026T23:47:37 - [MESSAGE][PASSED] - Verify element property value successfully
+
+15-10-2026T23:47:37 - [TEST_STEP][PASSED] - verifyElementPropertyValue(response, "status", petStatusAvailable): Verify element property value successfully
+
+15-10-2026T23:47:37 - [MESSAGE][PASSED] - Verify element property value successfully
+
+15-10-2026T23:47:37 - [TEST_STEP][PASSED] - verifyElementPropertyValue(response, "category.name", petCategoryName): Verify element property value successfully
+
+15-10-2026T23:47:37 - [MESSAGE][PASSED] - Verify element property value successfully
+
+15-10-2026T23:47:37 - [TEST_STEP][PASSED] - sendRequest(findTestObject("API/DELETE_Pet", ["petId":petId])): Send request successfully
+
+15-10-2026T23:47:38 - [MESSAGE][INFO] - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/DELETE_Pet_1.har
+
+15-10-2026T23:47:38 - [MESSAGE][INFO] - cURL Command:
+curl \
+  --location \
+  --request DELETE \
+  --header 'Accept: application/json' \
+  --header 'api_key: special-key' \
+  'https://petstore.swagger.io/v2/pet/1792082855840078'
+
+15-10-2026T23:47:38 - [MESSAGE][PASSED] - Send request successfully]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/TC02_POST_Pet_InvalidBody" time="0.4" classname="Test Cases/TC02_POST_Pet_InvalidBody" status="PASSED">
+         <system-out><![CDATA[15-10-2026T23:47:38 - [TEST_CASE][PASSED] - Test Cases/TC02_POST_Pet_InvalidBody: Test Cases/TC02_POST_Pet_InvalidBody
+
+15-10-2026T23:47:38 - [TEST_STEP][PASSED] - response = sendRequest(findTestObject("API/POST_Pet", ["body":invalidBody])): Send request successfully
+
+15-10-2026T23:47:38 - [MESSAGE][INFO] - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/POST_Pet_2.har
+
+15-10-2026T23:47:38 - [MESSAGE][INFO] - cURL Command:
+curl \
+  --location \
+  --request POST \
+  --data '{bad json' \
+  --header 'Content-Type: application/json' \
+  'https://petstore.swagger.io/v2/pet'
+
+15-10-2026T23:47:38 - [MESSAGE][PASSED] - Send request successfully
+
+15-10-2026T23:47:38 - [TEST_STEP][PASSED] - verifyResponseStatusCode(response, 400): Verify response status code successfully
+
+15-10-2026T23:47:38 - [MESSAGE][PASSED] - Verify response status code successfully
+
+15-10-2026T23:47:38 - [TEST_STEP][PASSED] - verifyElementPropertyValue(response, "code", 400): Verify element property value successfully
+
+15-10-2026T23:47:38 - [MESSAGE][PASSED] - Verify element property value successfully
+
+15-10-2026T23:47:38 - [TEST_STEP][PASSED] - verifyElementPropertyValue(response, "message", "bad input"): Verify element property value successfully
+
+15-10-2026T23:47:38 - [MESSAGE][PASSED] - Verify element property value successfully]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/TC03_PUT_Pet_Valid" time="1.079" classname="Test Cases/TC03_PUT_Pet_Valid" status="PASSED">
+         <system-out><![CDATA[15-10-2026T23:47:38 - [TEST_CASE][PASSED] - Test Cases/TC03_PUT_Pet_Valid: Test Cases/TC03_PUT_Pet_Valid
+
+15-10-2026T23:47:38 - [TEST_STEP][PASSED] - PetHelper.generateNewPet(): null
+
+15-10-2026T23:47:38 - [TEST_STEP][PASSED] - createBody = PetHelper.buildPetBody(petId, petName, petStatusAvailable): null
+
+15-10-2026T23:47:38 - [TEST_STEP][PASSED] - sendRequest(findTestObject("API/POST_Pet", ["body":createBody])): Send request successfully
+
+15-10-2026T23:47:39 - [MESSAGE][INFO] - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/POST_Pet_3.har
+
+15-10-2026T23:47:39 - [MESSAGE][INFO] - cURL Command:
+curl \
+  --location \
+  --request POST \
+  --data '{"id":1792082858714504,"category":{"id":1,"name":"dog"},"name":"pet_1792082858714504","photoUrls":["https://example.com/pet.jpg"],"tags":[{"id":1,"name":"auto"}],"status":"available"}' \
+  --header 'Content-Type: application/json' \
+  'https://petstore.swagger.io/v2/pet'
+
+15-10-2026T23:47:39 - [MESSAGE][PASSED] - Send request successfully
+
+15-10-2026T23:47:39 - [TEST_STEP][PASSED] - newName = petName + "_updated": null
+
+15-10-2026T23:47:39 - [TEST_STEP][PASSED] - updateBody = PetHelper.buildPetBody(petId, newName, petStatusSold): null
+
+15-10-2026T23:47:39 - [TEST_STEP][PASSED] - response = sendRequest(findTestObject("API/PUT_Pet", ["body":updateBody])): Send request successfully
+
+15-10-2026T23:47:39 - [MESSAGE][INFO] - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/PUT_Pet_4.har
+
+15-10-2026T23:47:39 - [MESSAGE][INFO] - cURL Command:
+curl \
+  --location \
+  --request PUT \
+  --data '{"id":1792082858714504,"category":{"id":1,"name":"dog"},"name":"pet_1792082858714504_updated","photoUrls":["https://example.com/pet.jpg"],"tags":[{"id":1,"name":"auto"}],"status":"sold"}' \
+  --header 'Content-Type: application/json' \
+  'https://petstore.swagger.io/v2/pet'
+
+15-10-2026T23:47:39 - [MESSAGE][PASSED] - Send request successfully
+
+15-10-2026T23:47:39 - [TEST_STEP][PASSED] - verifyResponseStatusCode(response, 200): Verify response status code successfully
+
+15-10-2026T23:47:39 - [MESSAGE][PASSED] - Verify response status code successfully
+
+15-10-2026T23:47:39 - [TEST_STEP][PASSED] - verifyElementPropertyValue(response, "id", petId): Verify element property value successfully
+
+15-10-2026T23:47:39 - [MESSAGE][PASSED] - Verify element property value successfully
+
+15-10-2026T23:47:39 - [TEST_STEP][PASSED] - verifyElementPropertyValue(response, "name", newName): Verify element property value successfully
+
+15-10-2026T23:47:39 - [MESSAGE][PASSED] - Verify element property value successfully
+
+15-10-2026T23:47:39 - [TEST_STEP][PASSED] - verifyElementPropertyValue(response, "status", petStatusSold): Verify element property value successfully
+
+15-10-2026T23:47:39 - [MESSAGE][PASSED] - Verify element property value successfully
+
+15-10-2026T23:47:39 - [TEST_STEP][PASSED] - sendRequest(findTestObject("API/DELETE_Pet", ["petId":petId])): Send request successfully
+
+15-10-2026T23:47:39 - [MESSAGE][INFO] - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/DELETE_Pet_5.har
+
+15-10-2026T23:47:39 - [MESSAGE][INFO] - cURL Command:
+curl \
+  --location \
+  --request DELETE \
+  --header 'Accept: application/json' \
+  --header 'api_key: special-key' \
+  'https://petstore.swagger.io/v2/pet/1792082858714504'
+
+15-10-2026T23:47:39 - [MESSAGE][PASSED] - Send request successfully]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/TC04_PUT_Pet_InvalidBody" time="0.382" classname="Test Cases/TC04_PUT_Pet_InvalidBody" status="PASSED">
+         <system-out><![CDATA[15-10-2026T23:47:39 - [TEST_CASE][PASSED] - Test Cases/TC04_PUT_Pet_InvalidBody: Test Cases/TC04_PUT_Pet_InvalidBody
+
+15-10-2026T23:47:39 - [TEST_STEP][PASSED] - response = sendRequest(findTestObject("API/PUT_Pet", ["body":invalidBody])): Send request successfully
+
+15-10-2026T23:47:40 - [MESSAGE][INFO] - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/PUT_Pet_6.har
+
+15-10-2026T23:47:40 - [MESSAGE][INFO] - cURL Command:
+curl \
+  --location \
+  --request PUT \
+  --data '{bad json' \
+  --header 'Content-Type: application/json' \
+  'https://petstore.swagger.io/v2/pet'
+
+15-10-2026T23:47:40 - [MESSAGE][PASSED] - Send request successfully
+
+15-10-2026T23:47:40 - [TEST_STEP][PASSED] - verifyResponseStatusCode(response, 400): Verify response status code successfully
+
+15-10-2026T23:47:40 - [MESSAGE][PASSED] - Verify response status code successfully
+
+15-10-2026T23:47:40 - [TEST_STEP][PASSED] - verifyElementPropertyValue(response, "code", 400): Verify element property value successfully
+
+15-10-2026T23:47:40 - [MESSAGE][PASSED] - Verify element property value successfully
+
+15-10-2026T23:47:40 - [TEST_STEP][PASSED] - verifyElementPropertyValue(response, "message", "bad input"): Verify element property value successfully
+
+15-10-2026T23:47:40 - [MESSAGE][PASSED] - Verify element property value successfully]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/TC05_GET_Pet_Valid" time="1.109" classname="Test Cases/TC05_GET_Pet_Valid" status="PASSED">
+         <system-out><![CDATA[15-10-2026T23:47:40 - [TEST_CASE][PASSED] - Test Cases/TC05_GET_Pet_Valid: Test Cases/TC05_GET_Pet_Valid
+
+15-10-2026T23:47:40 - [TEST_STEP][PASSED] - PetHelper.generateNewPet(): null
+
+15-10-2026T23:47:40 - [TEST_STEP][PASSED] - createBody = PetHelper.buildPetBody(petId, petName, petStatusAvailable): null
+
+15-10-2026T23:47:40 - [TEST_STEP][PASSED] - sendRequest(findTestObject("API/POST_Pet", ["body":createBody])): Send request successfully
+
+15-10-2026T23:47:40 - [MESSAGE][INFO] - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/POST_Pet_7.har
+
+15-10-2026T23:47:40 - [MESSAGE][INFO] - cURL Command:
+curl \
+  --location \
+  --request POST \
+  --data '{"id":1792082860175340,"category":{"id":1,"name":"dog"},"name":"pet_1792082860175340","photoUrls":["https://example.com/pet.jpg"],"tags":[{"id":1,"name":"auto"}],"status":"available"}' \
+  --header 'Content-Type: application/json' \
+  'https://petstore.swagger.io/v2/pet'
+
+15-10-2026T23:47:40 - [MESSAGE][PASSED] - Send request successfully
+
+15-10-2026T23:47:40 - [TEST_STEP][PASSED] - response = sendRequest(findTestObject("API/GET_Pet", ["petId":petId])): Send request successfully
+
+15-10-2026T23:47:40 - [MESSAGE][INFO] - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/GET_Pet_8.har
+
+15-10-2026T23:47:40 - [MESSAGE][INFO] - cURL Command:
+curl \
+  --location \
+  --header 'Accept: application/json' \
+  'https://petstore.swagger.io/v2/pet/1792082860175340'
+
+15-10-2026T23:47:40 - [MESSAGE][PASSED] - Send request successfully
+
+15-10-2026T23:47:40 - [TEST_STEP][PASSED] - verifyResponseStatusCode(response, 200): Verify response status code successfully
+
+15-10-2026T23:47:40 - [MESSAGE][PASSED] - Verify response status code successfully
+
+15-10-2026T23:47:40 - [TEST_STEP][PASSED] - verifyElementPropertyValue(response, "id", petId): Verify element property value successfully
+
+15-10-2026T23:47:40 - [MESSAGE][PASSED] - Verify element property value successfully
+
+15-10-2026T23:47:40 - [TEST_STEP][PASSED] - verifyElementPropertyValue(response, "name", petName): Verify element property value successfully
+
+15-10-2026T23:47:40 - [MESSAGE][PASSED] - Verify element property value successfully
+
+15-10-2026T23:47:40 - [TEST_STEP][PASSED] - verifyElementPropertyValue(response, "status", petStatusAvailable): Verify element property value successfully
+
+15-10-2026T23:47:40 - [MESSAGE][PASSED] - Verify element property value successfully
+
+15-10-2026T23:47:40 - [TEST_STEP][PASSED] - sendRequest(findTestObject("API/DELETE_Pet", ["petId":petId])): Send request successfully
+
+15-10-2026T23:47:41 - [MESSAGE][INFO] - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/DELETE_Pet_9.har
+
+15-10-2026T23:47:41 - [MESSAGE][INFO] - cURL Command:
+curl \
+  --location \
+  --request DELETE \
+  --header 'Accept: application/json' \
+  --header 'api_key: special-key' \
+  'https://petstore.swagger.io/v2/pet/1792082860175340'
+
+15-10-2026T23:47:41 - [MESSAGE][PASSED] - Send request successfully]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/TC06_GET_Pet_NotFound" time="0.484" classname="Test Cases/TC06_GET_Pet_NotFound" status="PASSED">
+         <system-out><![CDATA[15-10-2026T23:47:41 - [TEST_CASE][PASSED] - Test Cases/TC06_GET_Pet_NotFound: Test Cases/TC06_GET_Pet_NotFound
+
+15-10-2026T23:47:41 - [TEST_STEP][PASSED] - response = sendRequest(findTestObject("API/GET_Pet", ["petId":nonExistentPetId])): Send request successfully
+
+15-10-2026T23:47:41 - [MESSAGE][INFO] - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/GET_Pet_10.har
+
+15-10-2026T23:47:41 - [MESSAGE][INFO] - cURL Command:
+curl \
+  --location \
+  --header 'Accept: application/json' \
+  'https://petstore.swagger.io/v2/pet/999999999999'
+
+15-10-2026T23:47:41 - [MESSAGE][PASSED] - Send request successfully
+
+15-10-2026T23:47:41 - [TEST_STEP][PASSED] - verifyResponseStatusCode(response, 404): Verify response status code successfully
+
+15-10-2026T23:47:41 - [MESSAGE][PASSED] - Verify response status code successfully
+
+15-10-2026T23:47:41 - [TEST_STEP][PASSED] - verifyElementPropertyValue(response, "code", 1): Verify element property value successfully
+
+15-10-2026T23:47:41 - [MESSAGE][PASSED] - Verify element property value successfully
+
+15-10-2026T23:47:41 - [TEST_STEP][PASSED] - verifyElementPropertyValue(response, "type", "error"): Verify element property value successfully
+
+15-10-2026T23:47:41 - [MESSAGE][PASSED] - Verify element property value successfully
+
+15-10-2026T23:47:41 - [TEST_STEP][PASSED] - verifyElementPropertyValue(response, "message", "Pet not found"): Verify element property value successfully
+
+15-10-2026T23:47:41 - [MESSAGE][PASSED] - Verify element property value successfully]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/TC07_GET_Pet_InvalidId" time="0.404" classname="Test Cases/TC07_GET_Pet_InvalidId" status="PASSED">
+         <system-out><![CDATA[15-10-2026T23:47:41 - [TEST_CASE][PASSED] - Test Cases/TC07_GET_Pet_InvalidId: Test Cases/TC07_GET_Pet_InvalidId
+
+15-10-2026T23:47:41 - [TEST_STEP][PASSED] - response = sendRequest(findTestObject("API/GET_Pet", ["petId":invalidPetId])): Send request successfully
+
+15-10-2026T23:47:42 - [MESSAGE][INFO] - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/GET_Pet_11.har
+
+15-10-2026T23:47:42 - [MESSAGE][INFO] - cURL Command:
+curl \
+  --location \
+  --header 'Accept: application/json' \
+  'https://petstore.swagger.io/v2/pet/abc'
+
+15-10-2026T23:47:42 - [MESSAGE][PASSED] - Send request successfully
+
+15-10-2026T23:47:42 - [TEST_STEP][PASSED] - verifyResponseStatusCode(response, 404): Verify response status code successfully
+
+15-10-2026T23:47:42 - [MESSAGE][PASSED] - Verify response status code successfully
+
+15-10-2026T23:47:42 - [TEST_STEP][PASSED] - verifyElementPropertyValue(response, "code", 404): Verify element property value successfully
+
+15-10-2026T23:47:42 - [MESSAGE][PASSED] - Verify element property value successfully
+
+15-10-2026T23:47:42 - [TEST_STEP][PASSED] - verifyElementPropertyValue(response, "message", "java.lang.NumberFormatException: For input string: \"" + invalidPetId + "\""): Verify element property value successfully
+
+15-10-2026T23:47:42 - [MESSAGE][PASSED] - Verify element property value successfully]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/TC08_DELETE_Pet_Valid" time="0.793" classname="Test Cases/TC08_DELETE_Pet_Valid" status="PASSED">
+         <system-out><![CDATA[15-10-2026T23:47:42 - [TEST_CASE][PASSED] - Test Cases/TC08_DELETE_Pet_Valid: Test Cases/TC08_DELETE_Pet_Valid
+
+15-10-2026T23:47:42 - [TEST_STEP][PASSED] - PetHelper.generateNewPet(): null
+
+15-10-2026T23:47:42 - [TEST_STEP][PASSED] - createBody = PetHelper.buildPetBody(petId, petName, petStatusAvailable): null
+
+15-10-2026T23:47:42 - [TEST_STEP][PASSED] - sendRequest(findTestObject("API/POST_Pet", ["body":createBody])): Send request successfully
+
+15-10-2026T23:47:42 - [MESSAGE][INFO] - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/POST_Pet_12.har
+
+15-10-2026T23:47:42 - [MESSAGE][INFO] - cURL Command:
+curl \
+  --location \
+  --request POST \
+  --data '{"id":1792082862170715,"category":{"id":1,"name":"dog"},"name":"pet_1792082862170715","photoUrls":["https://example.com/pet.jpg"],"tags":[{"id":1,"name":"auto"}],"status":"available"}' \
+  --header 'Content-Type: application/json' \
+  'https://petstore.swagger.io/v2/pet'
+
+15-10-2026T23:47:42 - [MESSAGE][PASSED] - Send request successfully
+
+15-10-2026T23:47:42 - [TEST_STEP][PASSED] - response = sendRequest(findTestObject("API/DELETE_Pet", ["petId":petId])): Send request successfully
+
+15-10-2026T23:47:42 - [MESSAGE][INFO] - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/DELETE_Pet_13.har
+
+15-10-2026T23:47:42 - [MESSAGE][INFO] - cURL Command:
+curl \
+  --location \
+  --request DELETE \
+  --header 'Accept: application/json' \
+  --header 'api_key: special-key' \
+  'https://petstore.swagger.io/v2/pet/1792082862170715'
+
+15-10-2026T23:47:42 - [MESSAGE][PASSED] - Send request successfully
+
+15-10-2026T23:47:42 - [TEST_STEP][PASSED] - verifyResponseStatusCode(response, 200): Verify response status code successfully
+
+15-10-2026T23:47:42 - [MESSAGE][PASSED] - Verify response status code successfully
+
+15-10-2026T23:47:42 - [TEST_STEP][PASSED] - verifyElementPropertyValue(response, "code", 200): Verify element property value successfully
+
+15-10-2026T23:47:42 - [MESSAGE][PASSED] - Verify element property value successfully
+
+15-10-2026T23:47:42 - [TEST_STEP][PASSED] - verifyElementPropertyValue(response, "message", petId.toString()): Verify element property value successfully
+
+15-10-2026T23:47:42 - [MESSAGE][PASSED] - Verify element property value successfully]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/TC09_DELETE_Pet_NotFound" time="0.372" classname="Test Cases/TC09_DELETE_Pet_NotFound" status="PASSED">
+         <system-out><![CDATA[15-10-2026T23:47:42 - [TEST_CASE][PASSED] - Test Cases/TC09_DELETE_Pet_NotFound: Test Cases/TC09_DELETE_Pet_NotFound
+
+15-10-2026T23:47:42 - [TEST_STEP][PASSED] - response = sendRequest(findTestObject("API/DELETE_Pet", ["petId":nonExistentPetId])): Send request successfully
+
+15-10-2026T23:47:43 - [MESSAGE][INFO] - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/DELETE_Pet_14.har
+
+15-10-2026T23:47:43 - [MESSAGE][INFO] - cURL Command:
+curl \
+  --location \
+  --request DELETE \
+  --header 'Accept: application/json' \
+  --header 'api_key: special-key' \
+  'https://petstore.swagger.io/v2/pet/999999999999'
+
+15-10-2026T23:47:43 - [MESSAGE][PASSED] - Send request successfully
+
+15-10-2026T23:47:43 - [TEST_STEP][PASSED] - verifyResponseStatusCode(response, 404): Verify response status code successfully
+
+15-10-2026T23:47:43 - [MESSAGE][PASSED] - Verify response status code successfully
+
+15-10-2026T23:47:43 - [TEST_STEP][PASSED] - assert getResponseText().trim() == "" : "Body response DELETE not found seharusnya kosong": null]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/TC10_E2E_Pet_Lifecycle" time="2.3" classname="Test Cases/TC10_E2E_Pet_Lifecycle" status="PASSED">
+         <system-out><![CDATA[15-10-2026T23:47:43 - [TEST_CASE][PASSED] - Test Cases/TC10_E2E_Pet_Lifecycle: Test Cases/TC10_E2E_Pet_Lifecycle
+
+15-10-2026T23:47:43 - [TEST_STEP][PASSED] - PetHelper.generateNewPet(): null
+
+15-10-2026T23:47:43 - [TEST_STEP][PASSED] - petId = petId: null
+
+15-10-2026T23:47:43 - [TEST_STEP][PASSED] - petName = petName: null
+
+15-10-2026T23:47:43 - [TEST_STEP][PASSED] - createBody = PetHelper.buildPetBody(petId, petName, petStatusAvailable): null
+
+15-10-2026T23:47:43 - [TEST_STEP][PASSED] - createResp = sendRequest(findTestObject("API/POST_Pet", ["body":createBody])): Send request successfully
+
+15-10-2026T23:47:43 - [MESSAGE][INFO] - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/POST_Pet_15.har
+
+15-10-2026T23:47:43 - [MESSAGE][INFO] - cURL Command:
+curl \
+  --location \
+  --request POST \
+  --data '{"id":1792082863351899,"category":{"id":1,"name":"dog"},"name":"pet_1792082863351899","photoUrls":["https://example.com/pet.jpg"],"tags":[{"id":1,"name":"auto"}],"status":"available"}' \
+  --header 'Content-Type: application/json' \
+  'https://petstore.swagger.io/v2/pet'
+
+15-10-2026T23:47:43 - [MESSAGE][PASSED] - Send request successfully
+
+15-10-2026T23:47:43 - [TEST_STEP][PASSED] - verifyResponseStatusCode(createResp, 200): Verify response status code successfully
+
+15-10-2026T23:47:43 - [MESSAGE][PASSED] - Verify response status code successfully
+
+15-10-2026T23:47:43 - [TEST_STEP][PASSED] - verifyElementPropertyValue(createResp, "id", petId): Verify element property value successfully
+
+15-10-2026T23:47:43 - [MESSAGE][PASSED] - Verify element property value successfully
+
+15-10-2026T23:47:43 - [TEST_STEP][PASSED] - verifyElementPropertyValue(createResp, "name", petName): Verify element property value successfully
+
+15-10-2026T23:47:43 - [MESSAGE][PASSED] - Verify element property value successfully
+
+15-10-2026T23:47:43 - [TEST_STEP][PASSED] - getResp1 = sendRequest(findTestObject("API/GET_Pet", ["petId":petId])): Send request successfully
+
+15-10-2026T23:47:44 - [MESSAGE][INFO] - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/GET_Pet_16.har
+
+15-10-2026T23:47:44 - [MESSAGE][INFO] - cURL Command:
+curl \
+  --location \
+  --header 'Accept: application/json' \
+  'https://petstore.swagger.io/v2/pet/1792082863351899'
+
+15-10-2026T23:47:44 - [MESSAGE][PASSED] - Send request successfully
+
+15-10-2026T23:47:44 - [TEST_STEP][PASSED] - verifyResponseStatusCode(getResp1, 200): Verify response status code successfully
+
+15-10-2026T23:47:44 - [MESSAGE][PASSED] - Verify response status code successfully
+
+15-10-2026T23:47:44 - [TEST_STEP][PASSED] - verifyElementPropertyValue(getResp1, "id", petId): Verify element property value successfully
+
+15-10-2026T23:47:44 - [MESSAGE][PASSED] - Verify element property value successfully
+
+15-10-2026T23:47:44 - [TEST_STEP][PASSED] - verifyElementPropertyValue(getResp1, "name", petName): Verify element property value successfully
+
+15-10-2026T23:47:44 - [MESSAGE][PASSED] - Verify element property value successfully
+
+15-10-2026T23:47:44 - [TEST_STEP][PASSED] - verifyElementPropertyValue(getResp1, "status", petStatusAvailable): Verify element property value successfully
+
+15-10-2026T23:47:44 - [MESSAGE][PASSED] - Verify element property value successfully
+
+15-10-2026T23:47:44 - [TEST_STEP][PASSED] - updatedName = petName + "_updated": null
+
+15-10-2026T23:47:44 - [TEST_STEP][PASSED] - updateBody = PetHelper.buildPetBody(petId, updatedName, petStatusSold): null
+
+15-10-2026T23:47:44 - [TEST_STEP][PASSED] - updateResp = sendRequest(findTestObject("API/PUT_Pet", ["body":updateBody])): Send request successfully
+
+15-10-2026T23:47:44 - [MESSAGE][INFO] - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/PUT_Pet_17.har
+
+15-10-2026T23:47:44 - [MESSAGE][INFO] - cURL Command:
+curl \
+  --location \
+  --request PUT \
+  --data '{"id":1792082863351899,"category":{"id":1,"name":"dog"},"name":"pet_1792082863351899_updated","photoUrls":["https://example.com/pet.jpg"],"tags":[{"id":1,"name":"auto"}],"status":"sold"}' \
+  --header 'Content-Type: application/json' \
+  'https://petstore.swagger.io/v2/pet'
+
+15-10-2026T23:47:44 - [MESSAGE][PASSED] - Send request successfully
+
+15-10-2026T23:47:44 - [TEST_STEP][PASSED] - verifyResponseStatusCode(updateResp, 200): Verify response status code successfully
+
+15-10-2026T23:47:44 - [MESSAGE][PASSED] - Verify response status code successfully
+
+15-10-2026T23:47:44 - [TEST_STEP][PASSED] - verifyElementPropertyValue(updateResp, "name", updatedName): Verify element property value successfully
+
+15-10-2026T23:47:44 - [MESSAGE][PASSED] - Verify element property value successfully
+
+15-10-2026T23:47:44 - [TEST_STEP][PASSED] - verifyElementPropertyValue(updateResp, "status", petStatusSold): Verify element property value successfully
+
+15-10-2026T23:47:44 - [MESSAGE][PASSED] - Verify element property value successfully
+
+15-10-2026T23:47:44 - [TEST_STEP][PASSED] - getResp2 = sendRequest(findTestObject("API/GET_Pet", ["petId":petId])): Send request successfully
+
+15-10-2026T23:47:44 - [MESSAGE][INFO] - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/GET_Pet_18.har
+
+15-10-2026T23:47:44 - [MESSAGE][INFO] - cURL Command:
+curl \
+  --location \
+  --header 'Accept: application/json' \
+  'https://petstore.swagger.io/v2/pet/1792082863351899'
+
+15-10-2026T23:47:44 - [MESSAGE][PASSED] - Send request successfully
+
+15-10-2026T23:47:44 - [TEST_STEP][PASSED] - verifyResponseStatusCode(getResp2, 200): Verify response status code successfully
+
+15-10-2026T23:47:44 - [MESSAGE][PASSED] - Verify response status code successfully
+
+15-10-2026T23:47:44 - [TEST_STEP][PASSED] - verifyElementPropertyValue(getResp2, "id", petId): Verify element property value successfully
+
+15-10-2026T23:47:44 - [MESSAGE][PASSED] - Verify element property value successfully
+
+15-10-2026T23:47:44 - [TEST_STEP][PASSED] - verifyElementPropertyValue(getResp2, "name", updatedName): Verify element property value successfully
+
+15-10-2026T23:47:44 - [MESSAGE][PASSED] - Verify element property value successfully
+
+15-10-2026T23:47:44 - [TEST_STEP][PASSED] - verifyElementPropertyValue(getResp2, "status", petStatusSold): Verify element property value successfully
+
+15-10-2026T23:47:44 - [MESSAGE][PASSED] - Verify element property value successfully
+
+15-10-2026T23:47:44 - [TEST_STEP][PASSED] - deleteResp = sendRequest(findTestObject("API/DELETE_Pet", ["petId":petId])): Send request successfully
+
+15-10-2026T23:47:45 - [MESSAGE][INFO] - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/DELETE_Pet_19.har
+
+15-10-2026T23:47:45 - [MESSAGE][INFO] - cURL Command:
+curl \
+  --location \
+  --request DELETE \
+  --header 'Accept: application/json' \
+  --header 'api_key: special-key' \
+  'https://petstore.swagger.io/v2/pet/1792082863351899'
+
+15-10-2026T23:47:45 - [MESSAGE][PASSED] - Send request successfully
+
+15-10-2026T23:47:45 - [TEST_STEP][PASSED] - verifyResponseStatusCode(deleteResp, 200): Verify response status code successfully
+
+15-10-2026T23:47:45 - [MESSAGE][PASSED] - Verify response status code successfully
+
+15-10-2026T23:47:45 - [TEST_STEP][PASSED] - verifyElementPropertyValue(deleteResp, "message", petId.toString()): Verify element property value successfully
+
+15-10-2026T23:47:45 - [MESSAGE][PASSED] - Verify element property value successfully
+
+15-10-2026T23:47:45 - [TEST_STEP][PASSED] - getResp3 = sendRequest(findTestObject("API/GET_Pet", ["petId":petId])): Send request successfully
+
+15-10-2026T23:47:45 - [MESSAGE][INFO] - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/GET_Pet_20.har
+
+15-10-2026T23:47:45 - [MESSAGE][INFO] - cURL Command:
+curl \
+  --location \
+  --header 'Accept: application/json' \
+  'https://petstore.swagger.io/v2/pet/1792082863351899'
+
+15-10-2026T23:47:45 - [MESSAGE][PASSED] - Send request successfully
+
+15-10-2026T23:47:45 - [TEST_STEP][PASSED] - verifyResponseStatusCode(getResp3, 404): Verify response status code successfully
+
+15-10-2026T23:47:45 - [MESSAGE][PASSED] - Verify response status code successfully
+
+15-10-2026T23:47:45 - [TEST_STEP][PASSED] - verifyElementPropertyValue(getResp3, "message", "Pet not found"): Verify element property value successfully
+
+15-10-2026T23:47:45 - [MESSAGE][PASSED] - Verify element property value successfully]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <system-out><![CDATA[15-10-2026T23:47:35 - [TEST_SUITE][PASSED] - TS_Petstore_API: null]]></system-out>
+      <system-err><![CDATA[]]></system-err>
+   </testsuite>
+</testsuites>

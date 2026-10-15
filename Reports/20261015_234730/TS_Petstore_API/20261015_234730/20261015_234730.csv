@@ -1,0 +1,108 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+TS_Petstore_API,,"Semua test case API Petstore (positive, negative, E2E)",,15-10-2026 23:47:35,15-10-2026 23:47:45,10.269s,PASSED
+,,,,,,,
+Test Cases/TC01_POST_Pet_Valid,,,,15-10-2026 23:47:35,15-10-2026 23:47:38,2.714s,PASSED
+PetHelper.generateNewPet(),,,,15-10-2026 23:47:35,15-10-2026 23:47:35,0.138s,PASSED
+"body = PetHelper.buildPetBody(petId, petName, petStatusAvailable)",,,,15-10-2026 23:47:35,15-10-2026 23:47:35,0.016s,PASSED
+"response = sendRequest(findTestObject(""API/POST_Pet"", [""body"":body]))",,,,15-10-2026 23:47:35,15-10-2026 23:47:37,1.788s,PASSED
+"verifyResponseStatusCode(response, 200)",,,,15-10-2026 23:47:37,15-10-2026 23:47:37,0.017s,PASSED
+"verifyElementPropertyValue(response, ""id"", petId)",,,,15-10-2026 23:47:37,15-10-2026 23:47:37,0.053s,PASSED
+"verifyElementPropertyValue(response, ""name"", petName)",,,,15-10-2026 23:47:37,15-10-2026 23:47:37,0.019s,PASSED
+"verifyElementPropertyValue(response, ""status"", petStatusAvailable)",,,,15-10-2026 23:47:37,15-10-2026 23:47:37,0.015s,PASSED
+"verifyElementPropertyValue(response, ""category.name"", petCategoryName)",,,,15-10-2026 23:47:37,15-10-2026 23:47:37,0.018s,PASSED
+"sendRequest(findTestObject(""API/DELETE_Pet"", [""petId"":petId]))",,,,15-10-2026 23:47:37,15-10-2026 23:47:38,0.346s,PASSED
+,,,,,,,
+Test Cases/TC02_POST_Pet_InvalidBody,,,,15-10-2026 23:47:38,15-10-2026 23:47:38,0.400s,PASSED
+"response = sendRequest(findTestObject(""API/POST_Pet"", [""body"":invalidBody]))",,,,15-10-2026 23:47:38,15-10-2026 23:47:38,0.320s,PASSED
+"verifyResponseStatusCode(response, 400)",,,,15-10-2026 23:47:38,15-10-2026 23:47:38,0.005s,PASSED
+"verifyElementPropertyValue(response, ""code"", 400)",,,,15-10-2026 23:47:38,15-10-2026 23:47:38,0.022s,PASSED
+"verifyElementPropertyValue(response, ""message"", ""bad input"")",,,,15-10-2026 23:47:38,15-10-2026 23:47:38,0.017s,PASSED
+,,,,,,,
+Test Cases/TC03_PUT_Pet_Valid,,,,15-10-2026 23:47:38,15-10-2026 23:47:39,1.079s,PASSED
+PetHelper.generateNewPet(),,,,15-10-2026 23:47:38,15-10-2026 23:47:38,0.003s,PASSED
+"createBody = PetHelper.buildPetBody(petId, petName, petStatusAvailable)",,,,15-10-2026 23:47:38,15-10-2026 23:47:38,0.003s,PASSED
+"sendRequest(findTestObject(""API/POST_Pet"", [""body"":createBody]))",,,,15-10-2026 23:47:38,15-10-2026 23:47:39,0.315s,PASSED
+"newName = petName + ""_updated""",,,,15-10-2026 23:47:39,15-10-2026 23:47:39,0.003s,PASSED
+"updateBody = PetHelper.buildPetBody(petId, newName, petStatusSold)",,,,15-10-2026 23:47:39,15-10-2026 23:47:39,0.005s,PASSED
+"response = sendRequest(findTestObject(""API/PUT_Pet"", [""body"":updateBody]))",,,,15-10-2026 23:47:39,15-10-2026 23:47:39,0.310s,PASSED
+"verifyResponseStatusCode(response, 200)",,,,15-10-2026 23:47:39,15-10-2026 23:47:39,0.006s,PASSED
+"verifyElementPropertyValue(response, ""id"", petId)",,,,15-10-2026 23:47:39,15-10-2026 23:47:39,0.018s,PASSED
+"verifyElementPropertyValue(response, ""name"", newName)",,,,15-10-2026 23:47:39,15-10-2026 23:47:39,0.015s,PASSED
+"verifyElementPropertyValue(response, ""status"", petStatusSold)",,,,15-10-2026 23:47:39,15-10-2026 23:47:39,0.018s,PASSED
+"sendRequest(findTestObject(""API/DELETE_Pet"", [""petId"":petId]))",,,,15-10-2026 23:47:39,15-10-2026 23:47:39,0.324s,PASSED
+,,,,,,,
+Test Cases/TC04_PUT_Pet_InvalidBody,,,,15-10-2026 23:47:39,15-10-2026 23:47:40,0.382s,PASSED
+"response = sendRequest(findTestObject(""API/PUT_Pet"", [""body"":invalidBody]))",,,,15-10-2026 23:47:39,15-10-2026 23:47:40,0.311s,PASSED
+"verifyResponseStatusCode(response, 400)",,,,15-10-2026 23:47:40,15-10-2026 23:47:40,0.005s,PASSED
+"verifyElementPropertyValue(response, ""code"", 400)",,,,15-10-2026 23:47:40,15-10-2026 23:47:40,0.019s,PASSED
+"verifyElementPropertyValue(response, ""message"", ""bad input"")",,,,15-10-2026 23:47:40,15-10-2026 23:47:40,0.014s,PASSED
+,,,,,,,
+Test Cases/TC05_GET_Pet_Valid,,,,15-10-2026 23:47:40,15-10-2026 23:47:41,1.109s,PASSED
+PetHelper.generateNewPet(),,,,15-10-2026 23:47:40,15-10-2026 23:47:40,0.002s,PASSED
+"createBody = PetHelper.buildPetBody(petId, petName, petStatusAvailable)",,,,15-10-2026 23:47:40,15-10-2026 23:47:40,0.003s,PASSED
+"sendRequest(findTestObject(""API/POST_Pet"", [""body"":createBody]))",,,,15-10-2026 23:47:40,15-10-2026 23:47:40,0.351s,PASSED
+"response = sendRequest(findTestObject(""API/GET_Pet"", [""petId"":petId]))",,,,15-10-2026 23:47:40,15-10-2026 23:47:40,0.316s,PASSED
+"verifyResponseStatusCode(response, 200)",,,,15-10-2026 23:47:40,15-10-2026 23:47:40,0.005s,PASSED
+"verifyElementPropertyValue(response, ""id"", petId)",,,,15-10-2026 23:47:40,15-10-2026 23:47:40,0.019s,PASSED
+"verifyElementPropertyValue(response, ""name"", petName)",,,,15-10-2026 23:47:40,15-10-2026 23:47:40,0.014s,PASSED
+"verifyElementPropertyValue(response, ""status"", petStatusAvailable)",,,,15-10-2026 23:47:40,15-10-2026 23:47:40,0.014s,PASSED
+"sendRequest(findTestObject(""API/DELETE_Pet"", [""petId"":petId]))",,,,15-10-2026 23:47:40,15-10-2026 23:47:41,0.330s,PASSED
+,,,,,,,
+Test Cases/TC06_GET_Pet_NotFound,,,,15-10-2026 23:47:41,15-10-2026 23:47:41,0.484s,PASSED
+"response = sendRequest(findTestObject(""API/GET_Pet"", [""petId"":nonExistentPetId]))",,,,15-10-2026 23:47:41,15-10-2026 23:47:41,0.391s,PASSED
+"verifyResponseStatusCode(response, 404)",,,,15-10-2026 23:47:41,15-10-2026 23:47:41,0.004s,PASSED
+"verifyElementPropertyValue(response, ""code"", 1)",,,,15-10-2026 23:47:41,15-10-2026 23:47:41,0.027s,PASSED
+"verifyElementPropertyValue(response, ""type"", ""error"")",,,,15-10-2026 23:47:41,15-10-2026 23:47:41,0.016s,PASSED
+"verifyElementPropertyValue(response, ""message"", ""Pet not found"")",,,,15-10-2026 23:47:41,15-10-2026 23:47:41,0.014s,PASSED
+,,,,,,,
+Test Cases/TC07_GET_Pet_InvalidId,,,,15-10-2026 23:47:41,15-10-2026 23:47:42,0.404s,PASSED
+"response = sendRequest(findTestObject(""API/GET_Pet"", [""petId"":invalidPetId]))",,,,15-10-2026 23:47:41,15-10-2026 23:47:42,0.322s,PASSED
+"verifyResponseStatusCode(response, 404)",,,,15-10-2026 23:47:42,15-10-2026 23:47:42,0.004s,PASSED
+"verifyElementPropertyValue(response, ""code"", 404)",,,,15-10-2026 23:47:42,15-10-2026 23:47:42,0.019s,PASSED
+"verifyElementPropertyValue(response, ""message"", ""java.lang.NumberFormatException: For input string: \"""" + invalidPetId + ""\"""")",,,,15-10-2026 23:47:42,15-10-2026 23:47:42,0.013s,PASSED
+,,,,,,,
+Test Cases/TC08_DELETE_Pet_Valid,,,,15-10-2026 23:47:42,15-10-2026 23:47:42,0.793s,PASSED
+PetHelper.generateNewPet(),,,,15-10-2026 23:47:42,15-10-2026 23:47:42,0.001s,PASSED
+"createBody = PetHelper.buildPetBody(petId, petName, petStatusAvailable)",,,,15-10-2026 23:47:42,15-10-2026 23:47:42,0.001s,PASSED
+"sendRequest(findTestObject(""API/POST_Pet"", [""body"":createBody]))",,,,15-10-2026 23:47:42,15-10-2026 23:47:42,0.307s,PASSED
+"response = sendRequest(findTestObject(""API/DELETE_Pet"", [""petId"":petId]))",,,,15-10-2026 23:47:42,15-10-2026 23:47:42,0.404s,PASSED
+"verifyResponseStatusCode(response, 200)",,,,15-10-2026 23:47:42,15-10-2026 23:47:42,0.004s,PASSED
+"verifyElementPropertyValue(response, ""code"", 200)",,,,15-10-2026 23:47:42,15-10-2026 23:47:42,0.017s,PASSED
+"verifyElementPropertyValue(response, ""message"", petId.toString())",,,,15-10-2026 23:47:42,15-10-2026 23:47:42,0.013s,PASSED
+,,,,,,,
+Test Cases/TC09_DELETE_Pet_NotFound,,,,15-10-2026 23:47:42,15-10-2026 23:47:43,0.372s,PASSED
+"response = sendRequest(findTestObject(""API/DELETE_Pet"", [""petId"":nonExistentPetId]))",,,,15-10-2026 23:47:42,15-10-2026 23:47:43,0.331s,PASSED
+"verifyResponseStatusCode(response, 404)",,,,15-10-2026 23:47:43,15-10-2026 23:47:43,0.004s,PASSED
+"assert getResponseText().trim() == """" : ""Body response DELETE not found seharusnya kosong""",,,,15-10-2026 23:47:43,15-10-2026 23:47:43,0.007s,PASSED
+,,,,,,,
+Test Cases/TC10_E2E_Pet_Lifecycle,,,,15-10-2026 23:47:43,15-10-2026 23:47:45,2.300s,PASSED
+PetHelper.generateNewPet(),,,,15-10-2026 23:47:43,15-10-2026 23:47:43,0.001s,PASSED
+petId = petId,,,,15-10-2026 23:47:43,15-10-2026 23:47:43,0.001s,PASSED
+petName = petName,,,,15-10-2026 23:47:43,15-10-2026 23:47:43,0.001s,PASSED
+"createBody = PetHelper.buildPetBody(petId, petName, petStatusAvailable)",,,,15-10-2026 23:47:43,15-10-2026 23:47:43,0.005s,PASSED
+"createResp = sendRequest(findTestObject(""API/POST_Pet"", [""body"":createBody]))",,,,15-10-2026 23:47:43,15-10-2026 23:47:43,0.341s,PASSED
+"verifyResponseStatusCode(createResp, 200)",,,,15-10-2026 23:47:43,15-10-2026 23:47:43,0.004s,PASSED
+"verifyElementPropertyValue(createResp, ""id"", petId)",,,,15-10-2026 23:47:43,15-10-2026 23:47:43,0.022s,PASSED
+"verifyElementPropertyValue(createResp, ""name"", petName)",,,,15-10-2026 23:47:43,15-10-2026 23:47:43,0.013s,PASSED
+"getResp1 = sendRequest(findTestObject(""API/GET_Pet"", [""petId"":petId]))",,,,15-10-2026 23:47:43,15-10-2026 23:47:44,0.312s,PASSED
+"verifyResponseStatusCode(getResp1, 200)",,,,15-10-2026 23:47:44,15-10-2026 23:47:44,0.006s,PASSED
+"verifyElementPropertyValue(getResp1, ""id"", petId)",,,,15-10-2026 23:47:44,15-10-2026 23:47:44,0.017s,PASSED
+"verifyElementPropertyValue(getResp1, ""name"", petName)",,,,15-10-2026 23:47:44,15-10-2026 23:47:44,0.012s,PASSED
+"verifyElementPropertyValue(getResp1, ""status"", petStatusAvailable)",,,,15-10-2026 23:47:44,15-10-2026 23:47:44,0.014s,PASSED
+"updatedName = petName + ""_updated""",,,,15-10-2026 23:47:44,15-10-2026 23:47:44,0.002s,PASSED
+"updateBody = PetHelper.buildPetBody(petId, updatedName, petStatusSold)",,,,15-10-2026 23:47:44,15-10-2026 23:47:44,0.001s,PASSED
+"updateResp = sendRequest(findTestObject(""API/PUT_Pet"", [""body"":updateBody]))",,,,15-10-2026 23:47:44,15-10-2026 23:47:44,0.347s,PASSED
+"verifyResponseStatusCode(updateResp, 200)",,,,15-10-2026 23:47:44,15-10-2026 23:47:44,0.003s,PASSED
+"verifyElementPropertyValue(updateResp, ""name"", updatedName)",,,,15-10-2026 23:47:44,15-10-2026 23:47:44,0.018s,PASSED
+"verifyElementPropertyValue(updateResp, ""status"", petStatusSold)",,,,15-10-2026 23:47:44,15-10-2026 23:47:44,0.013s,PASSED
+"getResp2 = sendRequest(findTestObject(""API/GET_Pet"", [""petId"":petId]))",,,,15-10-2026 23:47:44,15-10-2026 23:47:44,0.335s,PASSED
+"verifyResponseStatusCode(getResp2, 200)",,,,15-10-2026 23:47:44,15-10-2026 23:47:44,0.003s,PASSED
+"verifyElementPropertyValue(getResp2, ""id"", petId)",,,,15-10-2026 23:47:44,15-10-2026 23:47:44,0.019s,PASSED
+"verifyElementPropertyValue(getResp2, ""name"", updatedName)",,,,15-10-2026 23:47:44,15-10-2026 23:47:44,0.017s,PASSED
+"verifyElementPropertyValue(getResp2, ""status"", petStatusSold)",,,,15-10-2026 23:47:44,15-10-2026 23:47:44,0.016s,PASSED
+"deleteResp = sendRequest(findTestObject(""API/DELETE_Pet"", [""petId"":petId]))",,,,15-10-2026 23:47:44,15-10-2026 23:47:45,0.345s,PASSED
+"verifyResponseStatusCode(deleteResp, 200)",,,,15-10-2026 23:47:45,15-10-2026 23:47:45,0.003s,PASSED
+"verifyElementPropertyValue(deleteResp, ""message"", petId.toString())",,,,15-10-2026 23:47:45,15-10-2026 23:47:45,0.023s,PASSED
+"getResp3 = sendRequest(findTestObject(""API/GET_Pet"", [""petId"":petId]))",,,,15-10-2026 23:47:45,15-10-2026 23:47:45,0.321s,PASSED
+"verifyResponseStatusCode(getResp3, 404)",,,,15-10-2026 23:47:45,15-10-2026 23:47:45,0.004s,PASSED
+"verifyElementPropertyValue(getResp3, ""message"", ""Pet not found"")",,,,15-10-2026 23:47:45,15-10-2026 23:47:45,0.017s,PASSED

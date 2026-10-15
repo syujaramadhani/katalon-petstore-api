@@ -1,0 +1,170 @@
+2026-10-15 23:47:34.544 INFO  c.k.k.c.l.logback.LogbackConfigurator    - Logback default configuration initialized from: /Applications/Katalon Studio.app/Contents/Eclipse/configuration/org.eclipse.osgi/159/0/.cp/resources/logback/logback-execution.xml
+2026-10-15 23:47:34.547 INFO  c.k.k.c.l.logback.LogbackConfigurator    - Logback custom configuration initialized from: /Users/syuja/Katalon Studio/api-petstore-automation/Include/config/log.properties
+2026-10-15 23:47:35.301 INFO  c.k.katalon.core.main.TestSuiteExecutor  - START Test Suites/TS_Petstore_API
+2026-10-15 23:47:35.403 INFO  c.k.katalon.core.main.TestSuiteExecutor  - userFullName = syuja ramadhani
+2026-10-15 23:47:35.404 INFO  c.k.katalon.core.main.TestSuiteExecutor  - projectName = api-petstore-automation
+2026-10-15 23:47:35.404 INFO  c.k.katalon.core.main.TestSuiteExecutor  - hostName = syuja - localhost
+2026-10-15 23:47:35.405 INFO  c.k.katalon.core.main.TestSuiteExecutor  - os = Mac OS X 64bit
+2026-10-15 23:47:35.406 INFO  c.k.katalon.core.main.TestSuiteExecutor  - hostAddress = 127.0.0.1
+2026-10-15 23:47:35.406 INFO  c.k.katalon.core.main.TestSuiteExecutor  - katalonVersion = 11.4.0
+2026-10-15 23:47:35.532 INFO  c.k.katalon.core.main.TestCaseExecutor   - --------------------
+2026-10-15 23:47:35.532 INFO  c.k.katalon.core.main.TestCaseExecutor   - START Test Cases/TC01_POST_Pet_Valid
+2026-10-15 23:47:35.828 DEBUG testcase.TC01_POST_Pet_Valid             - 1: PetHelper.generateNewPet()
+2026-10-15 23:47:35.967 DEBUG testcase.TC01_POST_Pet_Valid             - 2: body = PetHelper.buildPetBody(petId, petName, petStatusAvailable)
+2026-10-15 23:47:35.983 DEBUG testcase.TC01_POST_Pet_Valid             - 3: response = sendRequest(findTestObject("API/POST_Pet", ["body":body]))
+2026-10-15 23:47:37.725 INFO  c.k.k.core.webservice.common.HarLogger   - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/POST_Pet_0.har
+2026-10-15 23:47:37.739 INFO  c.k.k.core.webservice.common.HarLogger   - cURL Command:\ncurl \\n  --location \\n  --request POST \\n  --data '{"id":1792082855840078,"category":{"id":1,"name":"dog"},"name":"pet_1792082855840078","photoUrls":["https://example.com/pet.jpg"],"tags":[{"id":1,"name":"auto"}],"status":"available"}' \\n  --header 'Content-Type: application/json' \\n  'https://petstore.swagger.io/v2/pet'
+2026-10-15 23:47:37.772 DEBUG testcase.TC01_POST_Pet_Valid             - 4: verifyResponseStatusCode(response, 200)
+2026-10-15 23:47:37.788 DEBUG testcase.TC01_POST_Pet_Valid             - 5: verifyElementPropertyValue(response, "id", petId)
+2026-10-15 23:47:37.842 DEBUG testcase.TC01_POST_Pet_Valid             - 6: verifyElementPropertyValue(response, "name", petName)
+2026-10-15 23:47:37.861 DEBUG testcase.TC01_POST_Pet_Valid             - 7: verifyElementPropertyValue(response, "status", petStatusAvailable)
+2026-10-15 23:47:37.877 DEBUG testcase.TC01_POST_Pet_Valid             - 8: verifyElementPropertyValue(response, "category.name", petCategoryName)
+2026-10-15 23:47:37.896 DEBUG testcase.TC01_POST_Pet_Valid             - 9: sendRequest(findTestObject("API/DELETE_Pet", ["petId":petId]))
+2026-10-15 23:47:38.234 INFO  c.k.k.core.webservice.common.HarLogger   - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/DELETE_Pet_1.har
+2026-10-15 23:47:38.236 INFO  c.k.k.core.webservice.common.HarLogger   - cURL Command:\ncurl \\n  --location \\n  --request DELETE \\n  --header 'Accept: application/json' \\n  --header 'api_key: special-key' \\n  'https://petstore.swagger.io/v2/pet/1792082855840078'
+2026-10-15 23:47:38.245 INFO  c.k.katalon.core.main.TestCaseExecutor   - END Test Cases/TC01_POST_Pet_Valid
+2026-10-15 23:47:38.251 INFO  c.k.katalon.core.main.TestCaseExecutor   - --------------------
+2026-10-15 23:47:38.251 INFO  c.k.katalon.core.main.TestCaseExecutor   - START Test Cases/TC02_POST_Pet_InvalidBody
+2026-10-15 23:47:38.283 DEBUG testcase.TC01_POST_Pet_Valid             - 1: response = sendRequest(findTestObject("API/POST_Pet", ["body":invalidBody]))
+2026-10-15 23:47:38.597 INFO  c.k.k.core.webservice.common.HarLogger   - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/POST_Pet_2.har
+2026-10-15 23:47:38.599 INFO  c.k.k.core.webservice.common.HarLogger   - cURL Command:\ncurl \\n  --location \\n  --request POST \\n  --data '{bad json' \\n  --header 'Content-Type: application/json' \\n  'https://petstore.swagger.io/v2/pet'
+2026-10-15 23:47:38.603 DEBUG testcase.TC01_POST_Pet_Valid             - 2: verifyResponseStatusCode(response, 400)
+2026-10-15 23:47:38.609 DEBUG testcase.TC01_POST_Pet_Valid             - 3: verifyElementPropertyValue(response, "code", 400)
+2026-10-15 23:47:38.632 DEBUG testcase.TC01_POST_Pet_Valid             - 4: verifyElementPropertyValue(response, "message", "bad input")
+2026-10-15 23:47:38.650 INFO  c.k.katalon.core.main.TestCaseExecutor   - END Test Cases/TC02_POST_Pet_InvalidBody
+2026-10-15 23:47:38.656 INFO  c.k.katalon.core.main.TestCaseExecutor   - --------------------
+2026-10-15 23:47:38.656 INFO  c.k.katalon.core.main.TestCaseExecutor   - START Test Cases/TC03_PUT_Pet_Valid
+2026-10-15 23:47:38.712 DEBUG testcase.TC01_POST_Pet_Valid             - 1: PetHelper.generateNewPet()
+2026-10-15 23:47:38.715 DEBUG testcase.TC01_POST_Pet_Valid             - 2: createBody = PetHelper.buildPetBody(petId, petName, petStatusAvailable)
+2026-10-15 23:47:38.717 DEBUG testcase.TC01_POST_Pet_Valid             - 3: sendRequest(findTestObject("API/POST_Pet", ["body":createBody]))
+2026-10-15 23:47:39.026 INFO  c.k.k.core.webservice.common.HarLogger   - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/POST_Pet_3.har
+2026-10-15 23:47:39.027 INFO  c.k.k.core.webservice.common.HarLogger   - cURL Command:\ncurl \\n  --location \\n  --request POST \\n  --data '{"id":1792082858714504,"category":{"id":1,"name":"dog"},"name":"pet_1792082858714504","photoUrls":["https://example.com/pet.jpg"],"tags":[{"id":1,"name":"auto"}],"status":"available"}' \\n  --header 'Content-Type: application/json' \\n  'https://petstore.swagger.io/v2/pet'
+2026-10-15 23:47:39.033 DEBUG testcase.TC01_POST_Pet_Valid             - 4: newName = petName + "_updated"
+2026-10-15 23:47:39.036 DEBUG testcase.TC01_POST_Pet_Valid             - 5: updateBody = PetHelper.buildPetBody(petId, newName, petStatusSold)
+2026-10-15 23:47:39.041 DEBUG testcase.TC01_POST_Pet_Valid             - 6: response = sendRequest(findTestObject("API/PUT_Pet", ["body":updateBody]))
+2026-10-15 23:47:39.345 INFO  c.k.k.core.webservice.common.HarLogger   - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/PUT_Pet_4.har
+2026-10-15 23:47:39.347 INFO  c.k.k.core.webservice.common.HarLogger   - cURL Command:\ncurl \\n  --location \\n  --request PUT \\n  --data '{"id":1792082858714504,"category":{"id":1,"name":"dog"},"name":"pet_1792082858714504_updated","photoUrls":["https://example.com/pet.jpg"],"tags":[{"id":1,"name":"auto"}],"status":"sold"}' \\n  --header 'Content-Type: application/json' \\n  'https://petstore.swagger.io/v2/pet'
+2026-10-15 23:47:39.351 DEBUG testcase.TC01_POST_Pet_Valid             - 7: verifyResponseStatusCode(response, 200)
+2026-10-15 23:47:39.356 DEBUG testcase.TC01_POST_Pet_Valid             - 8: verifyElementPropertyValue(response, "id", petId)
+2026-10-15 23:47:39.375 DEBUG testcase.TC01_POST_Pet_Valid             - 9: verifyElementPropertyValue(response, "name", newName)
+2026-10-15 23:47:39.390 DEBUG testcase.TC01_POST_Pet_Valid             - 10: verifyElementPropertyValue(response, "status", petStatusSold)
+2026-10-15 23:47:39.409 DEBUG testcase.TC01_POST_Pet_Valid             - 11: sendRequest(findTestObject("API/DELETE_Pet", ["petId":petId]))
+2026-10-15 23:47:39.729 INFO  c.k.k.core.webservice.common.HarLogger   - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/DELETE_Pet_5.har
+2026-10-15 23:47:39.731 INFO  c.k.k.core.webservice.common.HarLogger   - cURL Command:\ncurl \\n  --location \\n  --request DELETE \\n  --header 'Accept: application/json' \\n  --header 'api_key: special-key' \\n  'https://petstore.swagger.io/v2/pet/1792082858714504'
+2026-10-15 23:47:39.735 INFO  c.k.katalon.core.main.TestCaseExecutor   - END Test Cases/TC03_PUT_Pet_Valid
+2026-10-15 23:47:39.740 INFO  c.k.katalon.core.main.TestCaseExecutor   - --------------------
+2026-10-15 23:47:39.740 INFO  c.k.katalon.core.main.TestCaseExecutor   - START Test Cases/TC04_PUT_Pet_InvalidBody
+2026-10-15 23:47:39.771 DEBUG testcase.TC01_POST_Pet_Valid             - 1: response = sendRequest(findTestObject("API/PUT_Pet", ["body":invalidBody]))
+2026-10-15 23:47:40.076 INFO  c.k.k.core.webservice.common.HarLogger   - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/PUT_Pet_6.har
+2026-10-15 23:47:40.078 INFO  c.k.k.core.webservice.common.HarLogger   - cURL Command:\ncurl \\n  --location \\n  --request PUT \\n  --data '{bad json' \\n  --header 'Content-Type: application/json' \\n  'https://petstore.swagger.io/v2/pet'
+2026-10-15 23:47:40.082 DEBUG testcase.TC01_POST_Pet_Valid             - 2: verifyResponseStatusCode(response, 400)
+2026-10-15 23:47:40.088 DEBUG testcase.TC01_POST_Pet_Valid             - 3: verifyElementPropertyValue(response, "code", 400)
+2026-10-15 23:47:40.107 DEBUG testcase.TC01_POST_Pet_Valid             - 4: verifyElementPropertyValue(response, "message", "bad input")
+2026-10-15 23:47:40.122 INFO  c.k.katalon.core.main.TestCaseExecutor   - END Test Cases/TC04_PUT_Pet_InvalidBody
+2026-10-15 23:47:40.124 INFO  c.k.katalon.core.main.TestCaseExecutor   - --------------------
+2026-10-15 23:47:40.124 INFO  c.k.katalon.core.main.TestCaseExecutor   - START Test Cases/TC05_GET_Pet_Valid
+2026-10-15 23:47:40.174 DEBUG testcase.TC01_POST_Pet_Valid             - 1: PetHelper.generateNewPet()
+2026-10-15 23:47:40.176 DEBUG testcase.TC01_POST_Pet_Valid             - 2: createBody = PetHelper.buildPetBody(petId, petName, petStatusAvailable)
+2026-10-15 23:47:40.179 DEBUG testcase.TC01_POST_Pet_Valid             - 3: sendRequest(findTestObject("API/POST_Pet", ["body":createBody]))
+2026-10-15 23:47:40.523 INFO  c.k.k.core.webservice.common.HarLogger   - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/POST_Pet_7.har
+2026-10-15 23:47:40.525 INFO  c.k.k.core.webservice.common.HarLogger   - cURL Command:\ncurl \\n  --location \\n  --request POST \\n  --data '{"id":1792082860175340,"category":{"id":1,"name":"dog"},"name":"pet_1792082860175340","photoUrls":["https://example.com/pet.jpg"],"tags":[{"id":1,"name":"auto"}],"status":"available"}' \\n  --header 'Content-Type: application/json' \\n  'https://petstore.swagger.io/v2/pet'
+2026-10-15 23:47:40.530 DEBUG testcase.TC01_POST_Pet_Valid             - 4: response = sendRequest(findTestObject("API/GET_Pet", ["petId":petId]))
+2026-10-15 23:47:40.840 INFO  c.k.k.core.webservice.common.HarLogger   - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/GET_Pet_8.har
+2026-10-15 23:47:40.842 INFO  c.k.k.core.webservice.common.HarLogger   - cURL Command:\ncurl \\n  --location \\n  --header 'Accept: application/json' \\n  'https://petstore.swagger.io/v2/pet/1792082860175340'
+2026-10-15 23:47:40.847 DEBUG testcase.TC01_POST_Pet_Valid             - 5: verifyResponseStatusCode(response, 200)
+2026-10-15 23:47:40.852 DEBUG testcase.TC01_POST_Pet_Valid             - 6: verifyElementPropertyValue(response, "id", petId)
+2026-10-15 23:47:40.872 DEBUG testcase.TC01_POST_Pet_Valid             - 7: verifyElementPropertyValue(response, "name", petName)
+2026-10-15 23:47:40.886 DEBUG testcase.TC01_POST_Pet_Valid             - 8: verifyElementPropertyValue(response, "status", petStatusAvailable)
+2026-10-15 23:47:40.901 DEBUG testcase.TC01_POST_Pet_Valid             - 9: sendRequest(findTestObject("API/DELETE_Pet", ["petId":petId]))
+2026-10-15 23:47:41.230 INFO  c.k.k.core.webservice.common.HarLogger   - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/DELETE_Pet_9.har
+2026-10-15 23:47:41.230 INFO  c.k.k.core.webservice.common.HarLogger   - cURL Command:\ncurl \\n  --location \\n  --request DELETE \\n  --header 'Accept: application/json' \\n  --header 'api_key: special-key' \\n  'https://petstore.swagger.io/v2/pet/1792082860175340'
+2026-10-15 23:47:41.233 INFO  c.k.katalon.core.main.TestCaseExecutor   - END Test Cases/TC05_GET_Pet_Valid
+2026-10-15 23:47:41.235 INFO  c.k.katalon.core.main.TestCaseExecutor   - --------------------
+2026-10-15 23:47:41.235 INFO  c.k.katalon.core.main.TestCaseExecutor   - START Test Cases/TC06_GET_Pet_NotFound
+2026-10-15 23:47:41.263 DEBUG testcase.TC01_POST_Pet_Valid             - 1: response = sendRequest(findTestObject("API/GET_Pet", ["petId":nonExistentPetId]))
+2026-10-15 23:47:41.648 INFO  c.k.k.core.webservice.common.HarLogger   - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/GET_Pet_10.har
+2026-10-15 23:47:41.649 INFO  c.k.k.core.webservice.common.HarLogger   - cURL Command:\ncurl \\n  --location \\n  --header 'Accept: application/json' \\n  'https://petstore.swagger.io/v2/pet/999999999999'
+2026-10-15 23:47:41.653 DEBUG testcase.TC01_POST_Pet_Valid             - 2: verifyResponseStatusCode(response, 404)
+2026-10-15 23:47:41.658 DEBUG testcase.TC01_POST_Pet_Valid             - 3: verifyElementPropertyValue(response, "code", 1)
+2026-10-15 23:47:41.686 DEBUG testcase.TC01_POST_Pet_Valid             - 4: verifyElementPropertyValue(response, "type", "error")
+2026-10-15 23:47:41.703 DEBUG testcase.TC01_POST_Pet_Valid             - 5: verifyElementPropertyValue(response, "message", "Pet not found")
+2026-10-15 23:47:41.719 INFO  c.k.katalon.core.main.TestCaseExecutor   - END Test Cases/TC06_GET_Pet_NotFound
+2026-10-15 23:47:41.721 INFO  c.k.katalon.core.main.TestCaseExecutor   - --------------------
+2026-10-15 23:47:41.721 INFO  c.k.katalon.core.main.TestCaseExecutor   - START Test Cases/TC07_GET_Pet_InvalidId
+2026-10-15 23:47:41.765 DEBUG testcase.TC01_POST_Pet_Valid             - 1: response = sendRequest(findTestObject("API/GET_Pet", ["petId":invalidPetId]))
+2026-10-15 23:47:42.082 INFO  c.k.k.core.webservice.common.HarLogger   - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/GET_Pet_11.har
+2026-10-15 23:47:42.083 INFO  c.k.k.core.webservice.common.HarLogger   - cURL Command:\ncurl \\n  --location \\n  --header 'Accept: application/json' \\n  'https://petstore.swagger.io/v2/pet/abc'
+2026-10-15 23:47:42.087 DEBUG testcase.TC01_POST_Pet_Valid             - 2: verifyResponseStatusCode(response, 404)
+2026-10-15 23:47:42.092 DEBUG testcase.TC01_POST_Pet_Valid             - 3: verifyElementPropertyValue(response, "code", 404)
+2026-10-15 23:47:42.110 DEBUG testcase.TC01_POST_Pet_Valid             - 4: verifyElementPropertyValue(response, "message", "java.lang.NumberFormatException: For input string: \"" + invalidPetId + "\"")
+2026-10-15 23:47:42.125 INFO  c.k.katalon.core.main.TestCaseExecutor   - END Test Cases/TC07_GET_Pet_InvalidId
+2026-10-15 23:47:42.128 INFO  c.k.katalon.core.main.TestCaseExecutor   - --------------------
+2026-10-15 23:47:42.128 INFO  c.k.katalon.core.main.TestCaseExecutor   - START Test Cases/TC08_DELETE_Pet_Valid
+2026-10-15 23:47:42.169 DEBUG testcase.TC01_POST_Pet_Valid             - 1: PetHelper.generateNewPet()
+2026-10-15 23:47:42.170 DEBUG testcase.TC01_POST_Pet_Valid             - 2: createBody = PetHelper.buildPetBody(petId, petName, petStatusAvailable)
+2026-10-15 23:47:42.172 DEBUG testcase.TC01_POST_Pet_Valid             - 3: sendRequest(findTestObject("API/POST_Pet", ["body":createBody]))
+2026-10-15 23:47:42.475 INFO  c.k.k.core.webservice.common.HarLogger   - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/POST_Pet_12.har
+2026-10-15 23:47:42.476 INFO  c.k.k.core.webservice.common.HarLogger   - cURL Command:\ncurl \\n  --location \\n  --request POST \\n  --data '{"id":1792082862170715,"category":{"id":1,"name":"dog"},"name":"pet_1792082862170715","photoUrls":["https://example.com/pet.jpg"],"tags":[{"id":1,"name":"auto"}],"status":"available"}' \\n  --header 'Content-Type: application/json' \\n  'https://petstore.swagger.io/v2/pet'
+2026-10-15 23:47:42.479 DEBUG testcase.TC01_POST_Pet_Valid             - 4: response = sendRequest(findTestObject("API/DELETE_Pet", ["petId":petId]))
+2026-10-15 23:47:42.878 INFO  c.k.k.core.webservice.common.HarLogger   - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/DELETE_Pet_13.har
+2026-10-15 23:47:42.880 INFO  c.k.k.core.webservice.common.HarLogger   - cURL Command:\ncurl \\n  --location \\n  --request DELETE \\n  --header 'Accept: application/json' \\n  --header 'api_key: special-key' \\n  'https://petstore.swagger.io/v2/pet/1792082862170715'
+2026-10-15 23:47:42.883 DEBUG testcase.TC01_POST_Pet_Valid             - 5: verifyResponseStatusCode(response, 200)
+2026-10-15 23:47:42.888 DEBUG testcase.TC01_POST_Pet_Valid             - 6: verifyElementPropertyValue(response, "code", 200)
+2026-10-15 23:47:42.906 DEBUG testcase.TC01_POST_Pet_Valid             - 7: verifyElementPropertyValue(response, "message", petId.toString())
+2026-10-15 23:47:42.921 INFO  c.k.katalon.core.main.TestCaseExecutor   - END Test Cases/TC08_DELETE_Pet_Valid
+2026-10-15 23:47:42.923 INFO  c.k.katalon.core.main.TestCaseExecutor   - --------------------
+2026-10-15 23:47:42.923 INFO  c.k.katalon.core.main.TestCaseExecutor   - START Test Cases/TC09_DELETE_Pet_NotFound
+2026-10-15 23:47:42.949 DEBUG testcase.TC01_POST_Pet_Valid             - 1: response = sendRequest(findTestObject("API/DELETE_Pet", ["petId":nonExistentPetId]))
+2026-10-15 23:47:43.275 INFO  c.k.k.core.webservice.common.HarLogger   - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/DELETE_Pet_14.har
+2026-10-15 23:47:43.276 INFO  c.k.k.core.webservice.common.HarLogger   - cURL Command:\ncurl \\n  --location \\n  --request DELETE \\n  --header 'Accept: application/json' \\n  --header 'api_key: special-key' \\n  'https://petstore.swagger.io/v2/pet/999999999999'
+2026-10-15 23:47:43.281 DEBUG testcase.TC01_POST_Pet_Valid             - 2: verifyResponseStatusCode(response, 404)
+2026-10-15 23:47:43.285 DEBUG testcase.TC01_POST_Pet_Valid             - 3: assert getResponseText().trim() == "" : "Body response DELETE not found seharusnya kosong"
+2026-10-15 23:47:43.295 INFO  c.k.katalon.core.main.TestCaseExecutor   - END Test Cases/TC09_DELETE_Pet_NotFound
+2026-10-15 23:47:43.297 INFO  c.k.katalon.core.main.TestCaseExecutor   - --------------------
+2026-10-15 23:47:43.297 INFO  c.k.katalon.core.main.TestCaseExecutor   - START Test Cases/TC10_E2E_Pet_Lifecycle
+2026-10-15 23:47:43.350 DEBUG testcase.TC01_POST_Pet_Valid             - 1: PetHelper.generateNewPet()
+2026-10-15 23:47:43.352 DEBUG testcase.TC01_POST_Pet_Valid             - 2: petId = petId
+2026-10-15 23:47:43.353 DEBUG testcase.TC01_POST_Pet_Valid             - 3: petName = petName
+2026-10-15 23:47:43.355 DEBUG testcase.TC01_POST_Pet_Valid             - 4: createBody = PetHelper.buildPetBody(petId, petName, petStatusAvailable)
+2026-10-15 23:47:43.359 DEBUG testcase.TC01_POST_Pet_Valid             - 5: createResp = sendRequest(findTestObject("API/POST_Pet", ["body":createBody]))
+2026-10-15 23:47:43.696 INFO  c.k.k.core.webservice.common.HarLogger   - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/POST_Pet_15.har
+2026-10-15 23:47:43.698 INFO  c.k.k.core.webservice.common.HarLogger   - cURL Command:\ncurl \\n  --location \\n  --request POST \\n  --data '{"id":1792082863351899,"category":{"id":1,"name":"dog"},"name":"pet_1792082863351899","photoUrls":["https://example.com/pet.jpg"],"tags":[{"id":1,"name":"auto"}],"status":"available"}' \\n  --header 'Content-Type: application/json' \\n  'https://petstore.swagger.io/v2/pet'
+2026-10-15 23:47:43.701 DEBUG testcase.TC01_POST_Pet_Valid             - 6: verifyResponseStatusCode(createResp, 200)
+2026-10-15 23:47:43.706 DEBUG testcase.TC01_POST_Pet_Valid             - 7: verifyElementPropertyValue(createResp, "id", petId)
+2026-10-15 23:47:43.728 DEBUG testcase.TC01_POST_Pet_Valid             - 8: verifyElementPropertyValue(createResp, "name", petName)
+2026-10-15 23:47:43.742 DEBUG testcase.TC01_POST_Pet_Valid             - 9: getResp1 = sendRequest(findTestObject("API/GET_Pet", ["petId":petId]))
+2026-10-15 23:47:44.048 INFO  c.k.k.core.webservice.common.HarLogger   - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/GET_Pet_16.har
+2026-10-15 23:47:44.050 INFO  c.k.k.core.webservice.common.HarLogger   - cURL Command:\ncurl \\n  --location \\n  --header 'Accept: application/json' \\n  'https://petstore.swagger.io/v2/pet/1792082863351899'
+2026-10-15 23:47:44.054 DEBUG testcase.TC01_POST_Pet_Valid             - 10: verifyResponseStatusCode(getResp1, 200)
+2026-10-15 23:47:44.060 DEBUG testcase.TC01_POST_Pet_Valid             - 11: verifyElementPropertyValue(getResp1, "id", petId)
+2026-10-15 23:47:44.077 DEBUG testcase.TC01_POST_Pet_Valid             - 12: verifyElementPropertyValue(getResp1, "name", petName)
+2026-10-15 23:47:44.090 DEBUG testcase.TC01_POST_Pet_Valid             - 13: verifyElementPropertyValue(getResp1, "status", petStatusAvailable)
+2026-10-15 23:47:44.104 DEBUG testcase.TC01_POST_Pet_Valid             - 14: updatedName = petName + "_updated"
+2026-10-15 23:47:44.106 DEBUG testcase.TC01_POST_Pet_Valid             - 15: updateBody = PetHelper.buildPetBody(petId, updatedName, petStatusSold)
+2026-10-15 23:47:44.108 DEBUG testcase.TC01_POST_Pet_Valid             - 16: updateResp = sendRequest(findTestObject("API/PUT_Pet", ["body":updateBody]))
+2026-10-15 23:47:44.450 INFO  c.k.k.core.webservice.common.HarLogger   - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/PUT_Pet_17.har
+2026-10-15 23:47:44.452 INFO  c.k.k.core.webservice.common.HarLogger   - cURL Command:\ncurl \\n  --location \\n  --request PUT \\n  --data '{"id":1792082863351899,"category":{"id":1,"name":"dog"},"name":"pet_1792082863351899_updated","photoUrls":["https://example.com/pet.jpg"],"tags":[{"id":1,"name":"auto"}],"status":"sold"}' \\n  --header 'Content-Type: application/json' \\n  'https://petstore.swagger.io/v2/pet'
+2026-10-15 23:47:44.455 DEBUG testcase.TC01_POST_Pet_Valid             - 17: verifyResponseStatusCode(updateResp, 200)
+2026-10-15 23:47:44.459 DEBUG testcase.TC01_POST_Pet_Valid             - 18: verifyElementPropertyValue(updateResp, "name", updatedName)
+2026-10-15 23:47:44.477 DEBUG testcase.TC01_POST_Pet_Valid             - 19: verifyElementPropertyValue(updateResp, "status", petStatusSold)
+2026-10-15 23:47:44.491 DEBUG testcase.TC01_POST_Pet_Valid             - 20: getResp2 = sendRequest(findTestObject("API/GET_Pet", ["petId":petId]))
+2026-10-15 23:47:44.821 INFO  c.k.k.core.webservice.common.HarLogger   - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/GET_Pet_18.har
+2026-10-15 23:47:44.824 INFO  c.k.k.core.webservice.common.HarLogger   - cURL Command:\ncurl \\n  --location \\n  --header 'Accept: application/json' \\n  'https://petstore.swagger.io/v2/pet/1792082863351899'
+2026-10-15 23:47:44.826 DEBUG testcase.TC01_POST_Pet_Valid             - 21: verifyResponseStatusCode(getResp2, 200)
+2026-10-15 23:47:44.830 DEBUG testcase.TC01_POST_Pet_Valid             - 22: verifyElementPropertyValue(getResp2, "id", petId)
+2026-10-15 23:47:44.848 DEBUG testcase.TC01_POST_Pet_Valid             - 23: verifyElementPropertyValue(getResp2, "name", updatedName)
+2026-10-15 23:47:44.866 DEBUG testcase.TC01_POST_Pet_Valid             - 24: verifyElementPropertyValue(getResp2, "status", petStatusSold)
+2026-10-15 23:47:44.883 DEBUG testcase.TC01_POST_Pet_Valid             - 25: deleteResp = sendRequest(findTestObject("API/DELETE_Pet", ["petId":petId]))
+2026-10-15 23:47:45.223 INFO  c.k.k.core.webservice.common.HarLogger   - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/DELETE_Pet_19.har
+2026-10-15 23:47:45.224 INFO  c.k.k.core.webservice.common.HarLogger   - cURL Command:\ncurl \\n  --location \\n  --request DELETE \\n  --header 'Accept: application/json' \\n  --header 'api_key: special-key' \\n  'https://petstore.swagger.io/v2/pet/1792082863351899'
+2026-10-15 23:47:45.228 DEBUG testcase.TC01_POST_Pet_Valid             - 26: verifyResponseStatusCode(deleteResp, 200)
+2026-10-15 23:47:45.232 DEBUG testcase.TC01_POST_Pet_Valid             - 27: verifyElementPropertyValue(deleteResp, "message", petId.toString())
+2026-10-15 23:47:45.255 DEBUG testcase.TC01_POST_Pet_Valid             - 28: getResp3 = sendRequest(findTestObject("API/GET_Pet", ["petId":petId]))
+2026-10-15 23:47:45.572 INFO  c.k.k.core.webservice.common.HarLogger   - HAR: /Users/syuja/Katalon Studio/api-petstore-automation/Reports/20261015_234730/TS_Petstore_API/20261015_234730/requests/main/GET_Pet_20.har
+2026-10-15 23:47:45.573 INFO  c.k.k.core.webservice.common.HarLogger   - cURL Command:\ncurl \\n  --location \\n  --header 'Accept: application/json' \\n  'https://petstore.swagger.io/v2/pet/1792082863351899'
+2026-10-15 23:47:45.576 DEBUG testcase.TC01_POST_Pet_Valid             - 29: verifyResponseStatusCode(getResp3, 404)
+2026-10-15 23:47:45.580 DEBUG testcase.TC01_POST_Pet_Valid             - 30: verifyElementPropertyValue(getResp3, "message", "Pet not found")
+2026-10-15 23:47:45.597 INFO  c.k.katalon.core.main.TestCaseExecutor   - END Test Cases/TC10_E2E_Pet_Lifecycle
+2026-10-15 23:47:45.649 INFO  c.k.katalon.core.main.TestSuiteExecutor  - --------------------
+2026-10-15 23:47:45.649 INFO  c.k.katalon.core.main.TestSuiteExecutor  - END Test Suites/TS_Petstore_API
+2026-10-15 23:47:45.649 INFO  c.k.katalon.core.main.TestSuiteExecutor  - ====================

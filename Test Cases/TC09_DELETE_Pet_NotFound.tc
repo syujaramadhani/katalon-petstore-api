@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC09_DELETE_Pet_NotFound</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>7bf76a31-1981-4f7e-a812-56665ae90e6a</testCaseGuid>
+</TestCaseEntity>

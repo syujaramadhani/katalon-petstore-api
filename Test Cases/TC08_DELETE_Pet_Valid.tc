@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC08_DELETE_Pet_Valid</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>906b4cd0-4015-4ad2-9a18-1630059fd7c6</testCaseGuid>
+</TestCaseEntity>
